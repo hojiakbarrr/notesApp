@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.tic_tac_toe.ui.Fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_editsNoteFragment"
+            app:destination="@id/editsNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createNotesFragment"
+            app:destination="@id/createNotesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_isCheck"
+            app:destination="@id/isCheck" />
+        <action
+            android:id="@+id/action_homeFragment_to_ischeckEdit"
+            app:destination="@id/ischeckEdit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNotesFragment"
+        android:name="com.example.tic_tac_toe.ui.Fragments.CreateNotesFragment"
+        android:label="fragment_create_notes"
+        tools:layout="@layout/fragment_create_notes" >
+        <action
+            android:id="@+id/action_createNotesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editsNoteFragment"
+        android:name="com.example.tic_tac_toe.ui.Fragments.EditsNoteFragment"
+        android:label="fragment_edits_note"
+        tools:layout="@layout/fragment_edits_note" >
+        <action
+            android:id="@+id/action_editsNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.example.tic_tac_toe.Model.Notes" />
+    </fragment>
+    <fragment
+        android:id="@+id/isCheck"
+        android:name="com.example.tic_tac_toe.ui.Fragments.IsCheck"
+        android:label="fragment_is_check"
+        tools:layout="@layout/fragment_is_check" >
+        <action
+            android:id="@+id/action_isCheck_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ischeckEdit"
+        android:name="com.example.tic_tac_toe.ui.Fragments.IscheckEdit"
+        android:label="fragment_ischeck_edit"
+        tools:layout="@layout/fragment_ischeck_edit" >
+        <action
+            android:id="@+id/action_ischeckEdit_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.example.tic_tac_toe.Model.Notes" />
+    </fragment>
+</navigation>
